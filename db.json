@@ -1,0 +1,322 @@
+{
+  "superteam": [
+    {
+      "id": "3"
+    },
+    {
+      "id": "1"
+    }
+  ],
+  "results": [
+    {
+      "id": "0",
+      "name": "3D Man",
+      "description": "description of 3D Man",
+      "modified": "Date",
+      "resourceURI": "string",
+      "urls": [
+        {
+          "type": "string",
+          "url": "string"
+        }
+      ],
+      "thumbnail": {
+        "path": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/3dman442.jpg",
+        "extension": "string"
+      },
+      "comics": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "stories": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string",
+            "type": "string"
+          }
+        ]
+      },
+      "events": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "series": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1",
+      "name": "Aardwolf",
+      "description": "description of Aardwolf",
+      "modified": "Date",
+      "resourceURI": "string",
+      "urls": [
+        {
+          "type": "string",
+          "url": "string"
+        }
+      ],
+      "thumbnail": {
+        "path": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/mikefichera--aardwolf-main.jpg",
+        "extension": "string"
+      },
+      "comics": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "stories": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string",
+            "type": "string"
+          }
+        ]
+      },
+      "events": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "series": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "name": "8-Ball",
+      "description": "description of 8-Ball",
+      "modified": "Date",
+      "resourceURI": "string",
+      "urls": [
+        {
+          "type": "string",
+          "url": "string"
+        }
+      ],
+      "thumbnail": {
+        "path": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/8-ball.jpg",
+        "extension": "string"
+      },
+      "comics": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "stories": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string",
+            "type": "string"
+          }
+        ]
+      },
+      "events": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "series": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "name": "8-Ball",
+      "description": "description of 8-Ball",
+      "modified": "Date",
+      "resourceURI": "string",
+      "urls": [
+        {
+          "type": "string",
+          "url": "string"
+        }
+      ],
+      "thumbnail": {
+        "path": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/8-ball.jpg",
+        "extension": "string"
+      },
+      "comics": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "stories": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string",
+            "type": "string"
+          }
+        ]
+      },
+      "events": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "series": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "name": "8-Ball",
+      "description": "description of 8-Ball",
+      "modified": "Date",
+      "resourceURI": "string",
+      "urls": [
+        {
+          "type": "string",
+          "url": "string"
+        }
+      ],
+      "thumbnail": {
+        "path": "https://terrigen-cdn-dev.marvel.com/content/prod/1x/8-ball.jpg",
+        "extension": "string"
+      },
+      "comics": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "stories": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string",
+            "type": "string"
+          }
+        ]
+      },
+      "events": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      },
+      "series": {
+        "available": "int",
+        "returned": "int",
+        "collectionURI": "string",
+        "items": [
+          {
+            "resourceURI": "string",
+            "name": "string"
+          }
+        ]
+      }
+    }
+  ]
+}

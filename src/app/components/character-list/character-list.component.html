@@ -1,0 +1,44 @@
+<div class="container">
+
+  <strong>Characters</strong>
+   
+  <mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="thumbnail">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> thumbnail </mat-header-cell>
+      <mat-cell *matCellDef="let character"> 
+          <img [src] = "character.thumbnail.path"/> 
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> description </mat-header-cell>
+      <mat-cell *matCellDef="let character"> {{character.description}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="superteam">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Add to Superteam </mat-header-cell>
+      <mat-cell *matCellDef="let character"> 
+          <button (click)="addToSuperteam(character.id)">Add</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+   </mat-table>
+
+   <mat-paginator [pageSizeOptions]="[3,5,20]"></mat-paginator>
+
+ </div> 

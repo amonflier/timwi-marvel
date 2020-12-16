@@ -1,0 +1,25 @@
+<div class="container">
+    <strong>Superteam</strong>
+   <table class="table">
+      <thead>
+         <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Thumbnail</th>
+            <th>Description</th>
+            <th>Remove</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let character of (( characters | async ) | superteam : ( superteam | async ))">
+            <th scope="row">{{character.id}}</th>
+            <td>{{character.name}}</td>
+            <td><img [src] = "character.thumbnail.path"/></td>
+            <td>{{character.description}}</td>
+            <td>
+                <button (click)="removeFromSuperteam(character.id)">Remove</button>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+ </div> 
