@@ -1,0 +1,51 @@
+Bonjour,
+
+J'ai bien entamé la refonte côté back dont on a parlé Jeudi.
+
+l'appli Spring-boot récupère toujours les données d'entrée sur le serveur JSON
+à monter avant démarrage, mais si vous disposez d'une clé API fonctionelle,
+je pense que vous pouvez modifier le fichier application.properties pour
+vous en servir :
+
+marvel.api.characters.url=https://gateway.marvel.com:443/v1/public/characters?apikey=<your API KEY>
+
+l'appli récupère les données au démarrage via le component MarvelAPplicationListener :
+Elle récupère la réponse JSON de l'API et stocke ses éléments dans un cache "characters" sous forme
+de Character (voir la classe Java correspondante).
+J'ai utilisé ehcache pour la gestion du cache.
+
+Elle expose ensuite 4 webservices REST Rest pour les différentes opérations à effectuer
+(CharacterController.java).
+Le ControllerRest utilise directement le cache afin de répondre aux différentes requêtes envoyées.
+En particulier, un deuxième cache "superteam" sert à gérêr la liste des membres de la superteam.
+
+Je n'ai pas réussi a exposer les interfaces addToSuperteam/removeFromSuperteam en méthode POST
+à cause de problèmatique de CORS Policy (bien que j'ai pu trouver une solution pour 
+les méthodes GET, voir CorsPolicy.java).
+J'ai donc un peu triché et exposé les services en méthode GET, bien que ça soit
+techniquement incorrect...
+
+Côté front j'ai juste allégé les traitements étant donné que l'appli Spring-boot renvoit
+directement les données au bon format pour l'affichage.
+
+Concernant le reste à faire, il faudrait implémenter quelques TUs notamment pour l'init
+du cache et la gestion de ce dernier lors des ajouts/suppressions de membres de la Superteam.
+
+J'aimerai aussi implémenter la persistance des membres de la Superteam sous forme d'id dans
+un fichier externe, afin de permettre l'initialisation du cache "superteam" lors du redémarrage.
+En effet la superteam est actuellement perdue lorsque l'on redémarre l'appli Spring-boot.
+Ce fichier serait lu au démarrage et l'initialisation de ce cache pourrait se faire après
+celle du premier en y récupérant les personnages à partir de la liste d'id
+(avec la méthode Cache.getAll(Set<extends Integer>))
+
+L'arborescence des fichiers pourrait aussi être revue pour mieux classer les fichiers
+à la racine. Il reste également probablement quelques imports et méthodes à nettoyer...
+
+Merci à vous si vous prenez le temps d'évaluer cette nouvelle version,
+et votre retour sera le bienvenu que nous soyons amener à travailler ensemble ou non.
+
+Vous pouvez me joindre sur mon adresse pro : amonflier@umanis.com.
+
+Cordialement,
+Antoine MONFLIER
+
