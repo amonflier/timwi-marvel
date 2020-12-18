@@ -14,4 +14,40 @@ public class Character implements Serializable {
         this.thumbnail = thumbnail;
         this.description = description;
     }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public void setThumbnail(String thumbnail) {
+    this.thumbnail = thumbnail;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public static long getSerialVersionUID() {
+    return serialVersionUID;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getThumbnail() {
+    return thumbnail;
+  }
+
+  public String getDescription() {
+    return description;
+  }
 }

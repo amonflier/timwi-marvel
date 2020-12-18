@@ -11,10 +11,10 @@
          </tr>
       </thead>
       <tbody>
-         <tr *ngFor="let character of (( characters | async ) | superteam : ( superteam | async ))">
+         <tr *ngFor="let character of (( superteam | async ) )">
             <th scope="row">{{character.id}}</th>
             <td>{{character.name}}</td>
-            <td><img [src] = "character.thumbnail.path"/></td>
+            <td><img [src] = "character.thumbnail"/></td>
             <td>{{character.description}}</td>
             <td>
                 <button (click)="removeFromSuperteam(character.id)">Remove</button>

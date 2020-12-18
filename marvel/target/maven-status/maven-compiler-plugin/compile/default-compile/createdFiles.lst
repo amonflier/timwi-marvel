@@ -1,0 +1,7 @@
+com\amonflier\marvel\marvel\MarvelApplication.class
+com\amonflier\marvel\marvel\CacheHelper.class
+com\amonflier\marvel\marvel\model\Character.class
+com\amonflier\marvel\marvel\CorsPolicy.class
+com\amonflier\marvel\marvel\controller\CharacterController.class
+com\amonflier\marvel\marvel\MarvelApplicationListener.class
+com\amonflier\marvel\marvel\CorsPolicy$1.class

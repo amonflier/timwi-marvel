@@ -9,13 +9,11 @@ import { CharacterListModule } from './components/character-list.module';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { SuperteamComponent } from './components/superteam/superteam.component';
-import { SuperteamPipe } from './pipes/superteam.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SuperteamComponent,
-    SuperteamPipe
+    SuperteamComponent
   ],
   imports: [
     BrowserModule,

@@ -1,32 +1,69 @@
 package com.amonflier.marvel.marvel.controller;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+
+import com.amonflier.marvel.marvel.CacheHelper;
+import org.ehcache.Cache;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.web.bind.annotation.*;
 import com.amonflier.marvel.marvel.model.Character;
 
+import javax.annotation.PostConstruct;
+
 @RestController
-@RequestMapping(value = "/api/characters")
 public class CharacterController {
-    private List<Character> characters = new ArrayList<Character>();
+    @Autowired
+    CacheHelper cache;
+
+    private List<Character> characters;
+    private List<Character> superteam;
     CharacterController() {
-        this.characters = buildCharacters();
+
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, value = "/api/characters")
     public List<Character> getCharacters() {
-        return this.characters;
+      if (this.characters==null) {
+        this.characters = buildCharacters();
+      }
+      return this.characters;
     }
+
+  @RequestMapping(method = RequestMethod.GET, value = "/api/superteam")
+  public List<Character> getSuperteam() {
+    this.superteam = buildSuperteam();
+    return this.superteam;
+  }
+
+  @RequestMapping( method = RequestMethod.GET, value = "/api/superteam/add/{id}")
+  public List<Character>  addToSuperteam(@PathVariable int id) {
+      cache.getSuperteamCacheFromCacheManager().put(id,
+        cache.getCharacterCacheFromCacheManager().get(id));
+      return getSuperteam();
+  }
+
+  @RequestMapping( method = RequestMethod.GET, value = "/api/superteam/delete/{id}")
+  public List<Character>  deleteFromSuperteam(@PathVariable int id) {
+    cache.getSuperteamCacheFromCacheManager().remove(id);
+    return getSuperteam();
+  }
 
     List<Character> buildCharacters() {
-        List<Character> chars = new ArrayList<>();
-        Character char1 = buildCharacter(1, "venu", "image1", "venu@email.com");
-        Character char2 = buildCharacter(2, "krishna", "image2", "krish@email.com");
-        chars.add(char1);
-        chars.add(char2);
+      List<Character> chars = new ArrayList<Character>();
+      for(Cache.Entry<Integer, Character> entry : cache.getCharacterCacheFromCacheManager()) {
+        chars.add(entry.getValue());
+      }
         return chars;
     }
+
+  List<Character> buildSuperteam() {
+    List<Character> chars = new ArrayList<Character>();
+    for(Cache.Entry<Integer, Character> entry : cache.getSuperteamCacheFromCacheManager()) {
+      chars.add(entry.getValue());
+    }
+    return chars;
+  }
 
     Character buildCharacter(int id, String name, String thumbnail, String description) {
         Character character = new Character(id, name, thumbnail, description);
